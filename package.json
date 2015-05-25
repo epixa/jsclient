@@ -1,0 +1,19 @@
+{
+  "name": "jsclient",
+  "version": "0.0.1",
+  "description": "JS module for building API clients.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/epixa/jsclient.git"
+  },
+  "author": "Court Ewing <court@epixa.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epixa/jsclient/issues"
+  },
+  "homepage": "https://github.com/epixa/jsclient",
+  "dependencies": {
+    "bluebird": "^2.9.26",
+    "lodash": "^3.9.2"
+  }
+}
