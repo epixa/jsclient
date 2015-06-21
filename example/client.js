@@ -18,6 +18,7 @@ export class Client extends BaseClient {
       'cancel_account',
       'create_account',
       'create_user',
+      'delete_account',
       'get_account',
       'get_user',
       'get_accounts',
