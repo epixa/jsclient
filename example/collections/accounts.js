@@ -4,9 +4,7 @@ import { Collection } from '../collection';
 
 export class Accounts extends Collection {
   init() {
-    this.modelName = 'account';
-    this.modelRequest = 'get_account';
-    this.collectionName = 'accounts';
-    this.collectionRequest = 'get_accounts';
+    this.model('account');
+    this.plural('accounts'); // optional, default behavior of model() will set this
   }
 }
