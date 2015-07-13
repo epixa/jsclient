@@ -6,6 +6,46 @@ let client = core.client.new({ url: '/api/path' });
 
 
 
+let accounts = client.collection('accounts');
+accounts.url() === 'http://api.example.com/accounts';
+
+accounts.$load(); // returns promise that is fulfilled by view
+let view = accounts.load();  // returns a view
+view === accounts.load(); // views with same args are memoized locally to the collection
+
+let viewWith50 = accounts.load({ per_page: 50 });
+view !== viewWith50;  // views are uniquely defined by their given arguments
+
+/*
+Collection views are similar to collections except that you cannot alter the
+filters that are applied to a view after instantiation, and operations on the
+view are also applied to the overall collection.
+*/
+view.$load()     // loads the view based on the view's configured filters
+view.$promise()  // a promise that is fulfilled with the view when it is loaded
+view.loaded()    // whether the view is loaded yet
+view.$reload()   // returns a promise to reload the current view
+view.reloading() // whether the view is reloading right now
+
+// the side effects of functions such as $load, $reload, add, delete, etc. all
+// proxy back to collection as well
+view.add(somevar);
+accounts.has(somevar) === true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let account = client.accounts.find('/accounts/123'); // GET
 client.accounts.$find('/accounts/123').then(function(result) { // GET, but returns promise
   account = result;
