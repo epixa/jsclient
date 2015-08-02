@@ -38,8 +38,10 @@ module.exports = function (config) {
         },
 
         coverageReporter: {
-            type : 'html',
-            dir : 'coverage/'
+            dir : 'coverage/',
+            reporters: [
+                { type: 'lcov', subdir: 'lcov' },
+            ]
         },
 
         thresholdReporter: {
