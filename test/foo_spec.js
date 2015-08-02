@@ -1,11 +1,11 @@
 'use strict';
 
-import { test } from '../index';
+import {test} from '../index';
 
 describe('JS Client', () => {
-    it('should do something', () => {
-        let foo = true;
-        expect(foo).to.be.true;
-        expect(test).to.equal('foo');
-    });
+  it('should do something', () => {
+    let foo = true;
+    expect(foo).to.be.true;
+    expect(test).to.equal('foo');
+  });
 });
