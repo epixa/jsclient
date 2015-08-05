@@ -7,13 +7,45 @@
     "url": "https://github.com/epixa/jsclient.git"
   },
   "author": "Court Ewing <court@epixa.com>",
+  "contributors": [
+    {
+      "name": "Josh Lasdin",
+      "email": "joshlasdindesign@gmail.com"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/epixa/jsclient/issues"
   },
   "homepage": "https://github.com/epixa/jsclient",
+  "main": "build/index.js",
   "dependencies": {
     "bluebird": "^2.9.26",
     "lodash": "^3.9.2"
+  },
+  "devDependencies": {
+    "babel": "^5.8.20",
+    "babel-core": "^5.8.20",
+    "babel-loader": "^5.3.2",
+    "karma": "^0.13.3",
+    "karma-coverage": "^0.4.2",
+    "karma-mocha": "^0.2.0",
+    "karma-phantomjs-launcher": "^0.2.0",
+    "karma-sinon-chai": "^1.0.0",
+    "karma-spec-reporter": "0.0.20",
+    "karma-threshold-reporter": "^0.1.15",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.2.5",
+    "phantomjs": "^1.9.17",
+    "webpack": "^1.10.5"
+  },
+  "scripts": {
+    "prepublish": "npm run transpile && npm run build",
+    "test": "npm run test-node && npm run test-browser",
+    "transpile": "babel lib --out-dir build",
+    "build": "webpack && npm run minify",
+    "minify": "uglifyjs dist/jsclient.js -o dist/jsclient.min.js",
+    "test-browser": "karma start ./karma.config.js",
+    "test-node": "mocha --compilers js:babel/register -r test/setup/index-node"
   }
 }
