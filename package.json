@@ -41,9 +41,10 @@
   },
   "scripts": {
     "install": "npm run build",
-    "build": "./node_modules/webpack/bin/webpack.js",
     "test": "npm run test-node && npm run test-browser",
     "transpile": "babel lib --out-dir build",
+    "build": "webpack && npm run minify",
+    "minify": "uglifyjs dist/jsclient.js -o dist/jsclient.min.js",
     "test-browser": "karma start ./karma.config.js",
     "test-node": "mocha --compilers js:babel/register -r test/setup/index-node"
   }
