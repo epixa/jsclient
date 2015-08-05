@@ -40,7 +40,7 @@
     "webpack": "^1.10.5"
   },
   "scripts": {
-    "install": "npm run build",
+    "prepublish": "npm run transpile && npm run build",
     "test": "npm run test-node && npm run test-browser",
     "transpile": "babel lib --out-dir build",
     "build": "webpack && npm run minify",
