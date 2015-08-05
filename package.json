@@ -42,7 +42,9 @@
   "scripts": {
     "install": "npm run build",
     "build": "./node_modules/webpack/bin/webpack.js",
-    "test": "./node_modules/karma/bin/karma start ./karma.config.js"
+    "test": "npm run test-node && npm run test-browser",
     "transpile": "babel lib --out-dir build",
+    "test-browser": "karma start ./karma.config.js",
+    "test-node": "mocha --compilers js:babel/register -r test/setup/index-node"
   }
 }

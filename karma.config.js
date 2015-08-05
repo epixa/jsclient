@@ -12,10 +12,13 @@ module.exports = function(config) {
     browserNoActivityTimeout: 120000,
     singleRun: true,
 
-    files: ['test/index.js'],
+    files: [
+      'node_modules/babel-core/browser-polyfill.js',
+      'test/setup/index-browser.js'
+    ],
 
     preprocessors: {
-      'test/index.js': ['webpack']
+      'test/setup/index-browser.js': ['webpack']
     },
 
     frameworks: ['mocha', 'sinon-chai'],
