@@ -1,6 +1,6 @@
 'use strict';
 
-import {test} from '../index';
+import {test} from '../lib/index';
 
 describe('JS Client', () => {
   it('should do something', () => {
