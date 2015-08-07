@@ -18,7 +18,7 @@
     "url": "https://github.com/epixa/jsclient/issues"
   },
   "homepage": "https://github.com/epixa/jsclient",
-  "main": "build/index.js",
+  "main": "dist/jsclient.js",
   "dependencies": {
     "bluebird": "^2.9.26",
     "lodash": "^3.9.2"

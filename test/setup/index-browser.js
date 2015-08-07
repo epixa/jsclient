@@ -3,6 +3,6 @@
 //
 // http://nicolasgallagher.com/how-to-test-react-components-karma-webpack/
 
-var context = require.context('../', false, /.+\_spec\.js?$/);
+var context = require.context('../', false, /.+\.spec\.js?$/);
 context.keys().forEach(context);
 module.exports = context;
