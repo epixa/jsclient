@@ -1,0 +1,11 @@
+language: node_js
+
+script:
+  - npm test
+
+notifications:
+  email: false
+
+branches:
+  except:
+  - /^v\d+\.\d+\.\d+$/
