@@ -2,7 +2,7 @@
 
 import { Request as BaseRequest } from '../lib/request';
 
-import * as assert from '../lib/assert';
+import * as assert from './assert';
 
 export class Request extends BaseRequest {
   constructor(...args) {
