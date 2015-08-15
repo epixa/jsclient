@@ -1,0 +1,2 @@
+--compilers js:babel/register
+-r test/setup/index-node
