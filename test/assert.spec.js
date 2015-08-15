@@ -14,4 +14,19 @@ describe('assert', () => {
       expect(() => assert.isFunction(arg)).not.to.throw();
     })
   });
+
+  describe('#exists', () => {
+    it('throws if value is undefined', () => {
+      expect(() => assert.exists()).to.throw();
+    });
+    it('throws if value is null', () => {
+      expect(() => assert.exists(null)).to.throw();
+    });
+    it('noops if arg exists', () => {
+      expect(() => assert.exists('')).not.to.throw();
+      expect(() => assert.exists(0)).not.to.throw();
+      expect(() => assert.exists([])).not.to.throw();
+      expect(() => assert.exists({})).not.to.throw();
+    });
+  });
 });
