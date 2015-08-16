@@ -1,5 +1,7 @@
 'use strict';
 
+export * from '../lib/assert';
+
 export function notEmpty(val) {
   if (val === undefined) {
     throw new TypeError('Cannot be undefined');
@@ -26,12 +28,5 @@ export function isString(val) {
   const type = typeof val;
   if (type !== 'string') {
     throw new TypeError(`Expected string, got ${type}`);
-  }
-}
-
-export function isFunction(val) {
-  const type = typeof val;
-  if (type !== 'function') {
-    throw new TypeError(`Expecting function, got ${type}`);
   }
 }
