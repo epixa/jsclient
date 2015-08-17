@@ -49,7 +49,7 @@
     "transpile": "babel lib --out-dir build",
     "build": "webpack && npm run minify",
     "minify": "uglifyjs dist/jsclient.js -o dist/jsclient.min.js",
-    "test-browser": "karma start ./karma.config.js",
-    "test-node": "mocha --compilers js:babel/register -r test/setup/index-node"
+    "test-browser": "karma start test/setup/karma.config.js",
+    "test-node": "mocha --opts test/setup/mocha.opts test/*.spec.js test/**/*.spec.js"
   }
 }

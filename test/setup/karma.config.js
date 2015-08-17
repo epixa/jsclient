@@ -1,8 +1,10 @@
 var _ = require('lodash'),
-  webpackConfig = require('./webpack.config');
+  path = require('path'),
+  webpackConfig = require('../../webpack.config');
 
 module.exports = function(config) {
   config.set({
+    basePath: path.join(__dirname, '..', '..'),
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
