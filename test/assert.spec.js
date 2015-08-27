@@ -3,6 +3,34 @@
 import * as assert from '../lib/assert';
 
 describe('assert', () => {
+  describe('#notEmpty', () => {
+    context('when given undefined', () => {
+      it('throws', () => {
+        expect(() => assert.notEmpty()).to.throw(TypeError);
+      });
+    });
+    context('when given null', () => {
+      it('throws', () => {
+        expect(() => assert.notEmpty(null)).to.throw(TypeError);
+      });
+    });
+    context('when given a string', () => {
+      it('throws', () => {
+        expect(() => assert.notEmpty('')).to.throw(TypeError);
+      });
+    });
+    context('when given 0', () => {
+      it('throws', () => {
+        expect(() => assert.notEmpty(0)).to.throw(TypeError);
+      });
+    });
+    context('when given an empty array', () => {
+      it('throws', () => {
+        expect(() => assert.notEmpty([])).to.throw(TypeError);
+      });
+    });
+  });
+
   describe('#isFunction()', () => {
     context('when given a non-function', () => {
       it('throws', () => {
