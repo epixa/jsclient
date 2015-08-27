@@ -31,6 +31,22 @@ describe('assert', () => {
     });
   });
 
+  describe('#isString()', () => {
+    context('when given a non-string', () => {
+      it('throws', () => {
+        expect(() => assert.isString(null)).to.throw(TypeError);
+        expect(() => assert.isString(1)).to.throw(TypeError);
+        expect(() => assert.isString({})).to.throw(TypeError);
+      });
+    })
+
+    context('when given a string', () => {
+      it('does not throw', () => {
+        expect(() => assert.isString('')).not.to.throw(TypeError);
+      });
+    })
+  });
+
   describe('#isFunction()', () => {
     context('when given a non-function', () => {
       it('throws', () => {
