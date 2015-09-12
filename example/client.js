@@ -1,30 +1,14 @@
 'use strict';
 
 import { Client as BaseClient } from '../lib/client';
+import * as collections from './collections';
+import * as models from './models';
+import * as requests from './requests';
 
 export class Client extends BaseClient {
   init() {
-    this.collections([
-      'accounts',
-      'users'
-    ]);
-
-    this.models([
-      'account',
-      'user'
-    ]);
-
-    this.requests([
-      'cancel_account',
-      'create_account',
-      'create_user',
-      'delete_account',
-      'get_account',
-      'get_user',
-      'get_accounts',
-      'get_users',
-      'update_account',
-      'update_user'
-    ]);
+    this.collections(collections);
+    this.models(models);
+    this.requests(models);
   }
 }
